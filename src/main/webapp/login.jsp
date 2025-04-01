@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supplier Module - Login</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="login-view">
+    <div class="login-container">
+        <h2>Modulo proveedores - Login</h2>
+        <h2>Frutas y Verduras</h2>
+        <% 
+        String errorMessage = (String) request.getAttribute("errorMessage");
+        if (errorMessage != null) {
+        %>
+            <p class="error"><%= errorMessage %></p>
+        <% } %>
+        
+        <form action="login" method="post" id="loginForm">
+            <div>
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required placeholder=" ">
+            </div>
+            
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required placeholder=" ">
+            </div>
+            
+            <div class="loading">Iniciando sesión...</div>
+            
+            <div>
+                <button type="submit" id="submitBtn">Iniciar Sesión</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function() {
+            document.getElementById('submitBtn').disabled = true;
+            document.querySelector('.loading').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

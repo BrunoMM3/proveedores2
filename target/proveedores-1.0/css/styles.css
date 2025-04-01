@@ -1,0 +1,490 @@
+/* =================== Estilos Generales =================== */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8f0; /* Fondo por defecto, pero se sobrescribe en vistas específicas */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* =================== Vista Dashboard =================== */
+/* Aplica un fondo verde claro y suave a la vista del dashboard */
+body.dashboard-view {
+    background-color: #e6f9e6; /* Verde claro y suave */
+}
+
+/* =================== Estilos para el Login =================== */
+/* Aplica un fondo verde claro y suave solo a la vista de login */
+body.login-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url("fruitfondo.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #6bb39f;
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #8fc1a9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-container button:hover {
+    background-color: #7aa18e;
+}
+
+.login-container .error {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.login-container .loading {
+    color: #8fc1a9;
+    font-style: italic;
+    margin: 10px 0;
+    display: none;
+}
+
+/* Responsividad para Login */
+@media (max-width: 768px) {
+    .login-container {
+        margin: 50px auto;
+        width: 90%;
+    }
+}
+
+/* =================== Estilos para el Dashboard =================== */
+.dashboard-header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #e0f7e9;
+    border-bottom: 2px solid #8fc1a9;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.dashboard-header h2 {
+    color: #6bb39f;
+    margin: 0;
+}
+
+.dashboard-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-buttons a {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.dashboard-buttons button {
+    padding: 10px 20px;
+    background-color: #8fc1a9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dashboard-buttons button:hover {
+    background-color: #7aa18e;
+}
+
+/* =================== Estilos para la Tabla de Productos =================== */
+.product-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.product-list th,
+.product-list td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-list th {
+    background-color: #e6f9ec;
+    color: #6bb39f;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Ancho de columnas */
+.product-list th:nth-child(1),
+.product-list td:nth-child(1) {
+    width: 15%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-list th:nth-child(2),
+.product-list td:nth-child(2) {
+    width: 15%;
+}
+
+.product-list th:nth-child(3),
+.product-list td:nth-child(3) {
+    width: 25%;
+}
+
+.product-list th:nth-child(4),
+.product-list td:nth-child(4) {
+    width: 10%;
+}
+
+.product-list th:nth-child(5),
+.product-list td:nth-child(5) {
+    width: 10%;
+}
+
+.product-list th:nth-child(6),
+.product-list td:nth-child(6) {
+    width: 10%;
+    text-align: center;
+}
+
+.product-list th:nth-child(7),
+.product-list td:nth-child(7) {
+    width: 15%;
+    text-align: center;
+}
+
+/* Imagenes de productos */
+.product-list img {
+    max-width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Botones de acción en la tabla de productos */
+.product-list .action-buttons a,
+.product-list .action-buttons button {
+    margin: 0 5px;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.product-list .action-buttons .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.product-list .action-buttons .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.product-list .action-buttons .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+.product-list .action-buttons .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+/* =================== Estilos para IDs =================== */
+.custom-id {
+    font-family: 'Courier New', Courier, monospace;
+    color: #6bb39f;
+    font-weight: bold;
+    background-color: #d1e8d2;
+    padding: 4px 8px;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+/* =================== Estilos para la Paginación =================== */
+.pagination {
+    margin-top: 20px;
+}
+
+/* =================== Estilos para Formularios de Agregar/Editar Producto =================== */
+.add-product-form {
+    margin-bottom: 20px;
+}
+
+.add-product-form div {
+    margin-bottom: 15px;
+}
+
+.add-product-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.add-product-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.add-product-form button {
+    padding: 12px 20px;
+    background-color: #8fc1a9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-product-form button:hover {
+    background-color: #7aa18e;
+}
+
+/* =================== Estilos para el Modal de Auditoría =================== */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.modal-header {
+    background-color: #e0f7e9;
+    border-bottom: 2px solid #8fc1a9;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-title {
+    color: #6bb39f;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.audit-table th,
+.audit-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.audit-table th {
+    background-color: #e0f7e9;
+    color: #6bb39f;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.audit-table td {
+    color: #333;
+}
+
+.audit-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* =================== Estilos para la Tabla de Órdenes =================== */
+
+body.orders-view {
+    background-color: #e6f9e6; /* Verde claro y suave */
+}
+.order-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.order-list th,
+.order-list td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.order-list th {
+    background-color: #a8d5ba;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.order-list tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.order-list td {
+    font-size: 14px;
+    color: #555;
+}
+
+.order-list ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.order-list ul li {
+    margin-bottom: 5px;
+}
+
+.order-list th:nth-child(1),
+.order-list td:nth-child(1) {
+    width: 10%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.order-list th:nth-child(2),
+.order-list td:nth-child(2) {
+    width: 25%;
+}
+
+.order-list th:nth-child(3),
+.order-list td:nth-child(3) {
+    width: 10%;
+}
+
+.order-list th:nth-child(4),
+.order-list td:nth-child(4) {
+    width: 10%;
+}
+
+.order-list th:nth-child(5),
+.order-list td:nth-child(5) {
+    width: 15%;
+}
+
+.order-list th:nth-child(6),
+.order-list td:nth-child(6) {
+    width: 10%;
+}
+
+.order-list th:nth-child(7),
+.order-list td:nth-child(7) {
+    width: 10%;
+}
+
+.order-list th:nth-child(8),
+.order-list td:nth-child(8) {
+    width: 20%;
+    text-align: center;
+}
+
+.order-list .action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.order-list th:nth-child(8),
+.order-list td:nth-child(8) {
+    width: 20%;
+    text-align: center;
+}
+
+.order-list .action-buttons a,
+.order-list .action-buttons button {
+    margin: 0;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.order-list .action-buttons .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.order-list .action-buttons .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.order-list .action-buttons .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+.order-list .action-buttons .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
