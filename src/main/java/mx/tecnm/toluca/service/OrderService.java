@@ -131,4 +131,51 @@ public class OrderService {
             }
         }
     }
+      public void updateOrderStatus(String orderId, String newStatus, String token) {
+        Client client = ClientBuilder.newClient();
+        Jsonb jsonb = JsonbBuilder.create();
+
+        try {
+            // Intentar con un objeto parcial primero
+            Order orderUpdate = new Order();
+            orderUpdate.setStatus(newStatus);
+
+            String url = baseUrl + serviceEndpoint + "/" + collection + "/" + orderId;
+            LOGGER.log(Level.INFO, "Actualizando estado de la orden en la URL: {0}", url);
+            String jsonOrder = jsonb.toJson(orderUpdate);
+            LOGGER.log(Level.INFO, "JSON enviado para actualización: {0}", jsonOrder);
+
+            Response response = client.target(url)
+                    .request(MediaType.APPLICATION_JSON)
+                    .header(ConfiguracionApp.getProperty("app.token.header"), "Bearer " + token)
+                    .put(Entity.json(orderUpdate));
+
+            String responseBody = response.readEntity(String.class);
+            LOGGER.log(Level.INFO, "Código HTTP: {0}, Respuesta de la API: {1}", new Object[]{response.getStatus(), responseBody});
+
+            if (response.getStatus() == 200) {
+                ProductService.ResponseMessage responseMessage = jsonb.fromJson(responseBody, ProductService.ResponseMessage.class);
+                if ("succes".equals(responseMessage.getStatus()) && responseMessage.getHttpCode() == 200) {
+                    LOGGER.log(Level.INFO, "Estado de la orden actualizado correctamente: {0}", responseBody);
+                } else {
+                    LOGGER.log(Level.SEVERE, "Error en la respuesta de la API: {0}", responseBody);
+                    throw new RuntimeException(responseMessage.getMessage());
+                }
+            } else {
+                LOGGER.log(Level.SEVERE, "Error al actualizar el estado de la orden: Código HTTP: {0}, Respuesta: {1}", 
+                    new Object[]{response.getStatus(), responseBody});
+                throw new RuntimeException("Error al actualizar el estado de la orden: Código " + response.getStatus() + " - " + responseBody);
+            }
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Excepción al actualizar el estado de la orden", e);
+            throw new RuntimeException("Error al actualizar el estado de la orden: " + e.getMessage());
+        } finally {
+            client.close();
+            try {
+                jsonb.close();
+            } catch (Exception e) {
+                LOGGER.log(Level.WARNING, "Error cerrando Jsonb", e);
+            }
+        }
+    }
 }
