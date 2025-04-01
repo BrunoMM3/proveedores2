@@ -8,8 +8,8 @@
 </head>
 <body class="login-view">
     <div class="login-container">
-        <h2>Supplier Module - Login</h2>
-        
+        <h2>Modulo proveedores - Login</h2>
+        <h2>Frutas y Verduras</h2>
         <% 
         String errorMessage = (String) request.getAttribute("errorMessage");
         if (errorMessage != null) {

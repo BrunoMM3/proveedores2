@@ -30,7 +30,7 @@
             </div>
         </div>
         <div>
-            <h3>Lista de Productos</h3>
+            <h3>Lista de Productos Frutas Y Verduras</h3>
             <table class="table table-striped">
                 <thead>
                     <tr>

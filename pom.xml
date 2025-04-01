@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>mx.tecnm.toluca</groupId>
     <artifactId>proveedores</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
     <packaging>war</packaging>
-    <name>proveedores-1.0</name>
+    <name>proveedores2</name>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

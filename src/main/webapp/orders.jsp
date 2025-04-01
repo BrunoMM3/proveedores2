@@ -10,7 +10,7 @@
 </head>
 <body class="orders-view">
     <div class="container mt-4">
-        <h2>Lista de Órdenes</h2>
+        <h2>Lista de Órdenes Frutas y Verduras</h2>
 
         <c:if test="${not empty error}">
             <div class="alert alert-danger">${error}</div>
