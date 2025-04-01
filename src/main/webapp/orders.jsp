@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="orders-view">
     <div class="container mt-4">
         <h2>Lista de Órdenes</h2>
 

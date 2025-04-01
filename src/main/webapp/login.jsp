@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Supplier Module - Login </title>
+    <title>Supplier Module - Login</title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body class="login-view">
     <div class="login-container">
         <h2>Supplier Module - Login</h2>
         
