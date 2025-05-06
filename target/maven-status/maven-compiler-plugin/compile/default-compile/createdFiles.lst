@@ -9,6 +9,7 @@ mx\tecnm\toluca\JakartaRestConfiguration.class
 mx\tecnm\toluca\service\AuthService.class
 mx\tecnm\toluca\util\ConfiguracionApp.class
 mx\tecnm\toluca\service\ProductService.class
+mx\tecnm\toluca\controller\ClearMessagesServlet.class
 mx\tecnm\toluca\model\RespuestaLogin.class
 mx\tecnm\toluca\service\ProductService$FileUploadResponse.class
 mx\tecnm\toluca\controller\ProductApiController.class
