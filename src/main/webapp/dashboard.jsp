@@ -194,7 +194,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <form action="dashboard" method="post" id="deleteProductForm">
+                        <form action="dashboard" method="post" enctype="multipart/form-data" id="deleteProductForm">
                             <input type="hidden" name="action" value="delete">
                             <input type="hidden" id="deleteId" name="id">
                             <button type="submit" class="btn btn-danger">Sí, Eliminar</button>
